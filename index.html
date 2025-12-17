@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>NexiO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              nexio: {
+                dark: '#050505',
+                card: 'var(--glass-bg)',
+                primary: '#d946ef', // Fuchsia 500
+                secondary: '#22d3ee', // Cyan 400
+                accent: '#8b5cf6', // Violet 500
+                surface: 'var(--surface-bg)',
+                text: 'var(--text-main)',
+              }
+            },
+            animation: {
+              'spin-slow': 'spin 8s linear infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --surface-bg: #050505;
+        --text-main: #ffffff;
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-high: rgba(255, 255, 255, 0.1);
+        --nav-bg: rgba(0, 0, 0, 0.8);
+      }
+
+      [data-theme="light"] {
+        --surface-bg: #f3f4f6;
+        --text-main: #111827;
+        --glass-bg: rgba(255, 255, 255, 0.6);
+        --glass-border: rgba(0, 0, 0, 0.05);
+        --glass-high: rgba(255, 255, 255, 0.8);
+        --nav-bg: rgba(255, 255, 255, 0.8);
+      }
+
+      body {
+        background-color: var(--surface-bg);
+        color: var(--text-main);
+        overscroll-behavior: none;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      
+      /* Scrollbar Hiding */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+      }
+      .glass-high {
+        background: var(--glass-high);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+      }
+      .neon-text {
+        text-shadow: 0 0 10px rgba(217, 70, 239, 0.5), 0 0 20px rgba(217, 70, 239, 0.3);
+      }
+      .neon-border {
+        box-shadow: 0 0 10px rgba(34, 211, 238, 0.3), inset 0 0 5px rgba(34, 211, 238, 0.1);
+      }
+      /* Safe area padding for notched phones */
+      .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+      .safe-pt { padding-top: env(safe-area-inset-top); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.7"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

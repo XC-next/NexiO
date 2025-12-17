@@ -1,0 +1,8 @@
+{
+  "name": "NexiO",
+  "description": "A next-generation social platform for creators featuring a futuristic neon-glass aesthetic, AI-powered studio tools, and smart feeds.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
